@@ -16,12 +16,12 @@ function branchSum(root) {
 
 function calculateBranchSum (root, runningSum, sum) {
 	if (root == null) {
-			return;
+		return;
 	}
 	runningSum = runningSum + root.value;
 	if(root.left == null && root.right == null) {
-			sum.push(runningSum);
-			return;
+		sum.push(runningSum);
+		return;
 	}
 	calculateBranchSum(root.left, runningSum, sum);
 	calculateBranchSum(root.right, runningSum, sum);
