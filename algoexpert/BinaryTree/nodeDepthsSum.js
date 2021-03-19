@@ -10,12 +10,12 @@ class BinaryTree {
 }
 
 function nodeDepths(root) {
-    return nodeDepthsHealper (root, 0);
+    return nodeDepthsHelper (root, 0);
 }
 
-function nodeDepthsHealper(node, depth) {
+function nodeDepthsHelper(node, depth) {
     if (node == null) {
         return 0;
     }
-    return depth + nodeDepthsHealper(node.left, depth + 1) +  nodeDepthsHealper(node.right, depth + 1);
+    return depth + nodeDepthsHelper(node.left, depth + 1) +  nodeDepthsHelper(node.right, depth + 1);
 }
