@@ -21,7 +21,7 @@ var named_function_expression = function function_name() {
     console.log('calling function_expression');
 }
 
-// First class function --- Ability to be use like values
+// First class function --- Ability to be used like values
 var first_class_func = function (param1) {
     return function xyz() {
         console.log ('calling xyz')
