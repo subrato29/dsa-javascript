@@ -26,24 +26,25 @@ Output: -1
 Explanation: The smallest value is 2, but there isn't any second smallest value.
  */
 var findSecondMinimumValue = function(root) {
-    let set = new Set;
-    helper (root, set);
-    let array = Array.from(set);
-    array.sort((a, b) => a - b);
+    let array = [];
+    helper (root, array);
     if (array.length > 1) {
+        array.sort((a, b) => a - b);
         return array[1];
     }
     return -1;
 };
 
-function helper (node, set) {
+function helper (node, array) {
     if (node == null) {
         return;
     }
     if (node.left == null && node.right == null) {
-        set.add (node.val);
+        if (!array.includes(node.val)) {
+            array.push(node.val);
+        }
         return;
     }
-    helper (node.left, set);
-    helper (node.right, set);
+    helper (node.left, array);
+    helper (node.right, array);
 }
