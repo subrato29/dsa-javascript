@@ -17,3 +17,9 @@ console.log(a + ":" + b); // 3:4
 
 [a, b] = [b, a];
 console.log(a + ":" + b); // 4:3
+
+//****************************************************************************** */
+//To verify a letter of a string is character or not
+function isCharacterALetter(char) {
+    return (/[a-zA-Z]/).test(char)
+}
