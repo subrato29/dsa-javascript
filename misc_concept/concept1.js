@@ -23,3 +23,7 @@ console.log(a + ":" + b); // 4:3
 function isCharacterALetter(char) {
     return (/[a-zA-Z]/).test(char)
 }
+
+//Converting char into number without using built in function
+let ch = '5' - '0';
+console.log(typeof(ch));
