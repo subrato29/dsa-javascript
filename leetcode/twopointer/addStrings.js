@@ -27,7 +27,7 @@ Output: "0"
  */
 
 var addStrings = function(num1, num2) {
-    let result = '';
+    let result = [];
     let i = num1.length - 1;
     let j = num2.length - 1;
     let carry = 0;
@@ -41,11 +41,11 @@ var addStrings = function(num1, num2) {
             sum += num2.charAt(j) - '0';
             j--;
         }
-        result += sum % 10;
+        result.push(sum % 10);
         carry = Math.floor(sum / 10);
     }
     if (carry != 0) {
-        result += carry;
+        result.push(carry);
     }
-    return [...result].reverse().join('');
+    return result.reverse().join('');
 };
