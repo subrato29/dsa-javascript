@@ -34,3 +34,8 @@ console.log(new String('Subrato'));
 
 console.log(typeof new String('Subrato')); //object
 console.log(typeof new String('Subrato').slice(1)); //string
+
+
+let string = '10101';
+console.log(typeof (string.charAt(1))); //string
+console.log(typeof (string.charAt(1) - '0')); //string
