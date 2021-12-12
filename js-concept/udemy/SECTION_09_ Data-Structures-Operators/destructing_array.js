@@ -14,7 +14,6 @@ const[a, , c] = arr;
 console.log(a,c); //2 4
 
 //Swap by destructuring
-
 let arr1 = [2, 3];
 
 let [first, second] = arr1;
