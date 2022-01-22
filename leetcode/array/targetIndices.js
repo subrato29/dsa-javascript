@@ -48,13 +48,21 @@ The index where nums[i] == 5 is 4.
         let mid = low + Math.floor ((high - low) / 2);
         if (nums[mid] == target) {
             set.add(mid);
-            while (mid > 0 && nums[mid] == nums[mid - 1]) {
-                set.add (mid - 1);
-                mid = mid - 1;
+            while (mid > 0) {
+                if (nums[mid] == nums[mid - 1]) {
+                    set.add (mid - 1);  
+                    mid = mid - 1;
+                } else {
+                    break; 
+                }
             }
-            while (mid < nums.length - 1 && nums[mid] == nums[mid + 1]) {
-                set.add (mid + 1);
-                mid = mid + 1;
+            while (mid < nums.length - 1) {
+                if (nums[mid] == nums[mid + 1]) {
+                    set.add (mid + 1);  
+                    mid = mid + 1;
+                } else {
+                    break; 
+                }
             }
             let arr = [...set];
             arr.sort ((a, b) => a - b);
