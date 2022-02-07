@@ -11,7 +11,6 @@
  */
  const secureBooking = () => {
     let counter = 0;
-
     return () => {
         counter++;
         console.log (counter + ' passanger');
