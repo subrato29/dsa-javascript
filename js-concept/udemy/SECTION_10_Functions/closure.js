@@ -9,6 +9,10 @@
  * A closure makes sure that a function does not loose connection to variables that existed at the
  * function's birthplace. A closure is an internal property of a function.
  */
+
+/**
+ * A closure has higher priority over scope chain
+ */
  const secureBooking = () => {
     let counter = 0;
     return () => {
