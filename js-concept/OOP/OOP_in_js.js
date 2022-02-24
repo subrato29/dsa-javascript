@@ -2,6 +2,7 @@
  * Constructor function: 
  * - Technique to create object from function
  * - This is how built-in objects like Arrays, Map, Set are actually implemented
+ * - Constructor function always starts with Capital letter. Array, Map follow the same convension.
  */
 
 /**
