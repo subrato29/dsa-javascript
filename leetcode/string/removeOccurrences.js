@@ -51,9 +51,9 @@ Now s has no occurrences of "xy".
         if (index == 0) {
             sb += s.substring (partLength, s.length);
         } else {
-            const part1 = s.substring (0, index);
-            const part2 = s.substring (part1.length + partLength, s.length);
-            sb += part1 + part2;
+            const beforeOccurance = s.substring (0, index);
+            const afterOccurance = s.substring (beforeOccurance.length + partLength, s.length);
+            sb += beforeOccurance + afterOccurance;
         }
         s = sb;
         sb = '';
