@@ -25,8 +25,8 @@ letters = [...str, ' ', 'H'];
 console.log(letters); //["S", "u", "b", "r", "a", "t", "o", " ", "H"]
 
 //Concat of arrays
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
+arr1 = [1, 2, 3];
+arr2 = [4, 5, 6];
 const arr3 = [7, 8, 9];
 
 console.log([...arr1, ...arr2, ...arr3]); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
