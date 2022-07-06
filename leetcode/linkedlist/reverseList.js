@@ -25,9 +25,7 @@ Output: []
  */
 
 var reverseList = function(head) {
-    let currentNode = head;
     let prevNode = null;
-
     while (currentNode != null) {
         let nextNode = currentNode.next;
         currentNode.next = prevNode;
