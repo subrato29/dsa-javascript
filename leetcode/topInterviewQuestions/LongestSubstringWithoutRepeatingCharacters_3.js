@@ -30,19 +30,19 @@
  * @return {number}
  */
  var lengthOfLongestSubstring = function(s) {
-    let unique_char_pointer = 0;
-    let duplicate_char_pointer = 0;
+    let uniquePointer = 0;
+    let duplicatePointer = 0;
     let max = 0;
     let set = new Set ();
-    while (unique_char_pointer < s.length) {
-        let ch = s.charAt (unique_char_pointer);
+    while (uniquePointer < s.length) {
+        let ch = s.charAt (uniquePointer);
         if (!set.has (ch)) {
             set.add (ch);
-            unique_char_pointer++;
+            uniquePointer++;
             max = Math.max (set.size, max);
         } else {
-            set.delete (s.charAt (duplicate_char_pointer));
-            duplicate_char_pointer++;
+            set.delete (s.charAt (duplicatePointer));
+            duplicatePointer++;
         }
     }
     return max;
