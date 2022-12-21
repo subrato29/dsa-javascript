@@ -15,3 +15,7 @@ var func2 = function() {
 }
 
 func1(); // print as usual
+
+/**
+ * Hoisting is process in JS to access functions or variable even before they are initialized.
+ */
