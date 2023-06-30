@@ -24,19 +24,16 @@ Output: false
 Explanation: The characters that appear in s are 'a' and 'b'.
 'a' occurs 3 times while 'b' occurs 2 times, which is not the same number of times.
  */
-var areOccurrencesEqual = function(s) {
-    let map = new Map();
-    for (let i = 0; i < s.length; i++) {
-        let ch = s.charAt(i);
-        if (map.has(ch)) {
-            map.set(ch, map.get(ch) + 1);
-        }else {
-            map.set(ch, 1);
-        }
+
+var areOccurrencesEqual = function (s) {
+  let map = new Map();
+  for (const ch of s) {
+    if (map.has(ch)) {
+      map.set(ch, map.get(ch) + 1);
+    } else {
+      map.set(ch, 1);
     }
-    let set = new Set(map.values());
-    if (set.size == 1) {
-        return true;
-    }
-    return false;
+  }
+  const set = new Set(map.values());
+  return set.size == 1;
 };
