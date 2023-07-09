@@ -31,30 +31,31 @@ Input: words1 = ["a","ab"], words2 = ["a","a","a","ab"]
 Output: 1
 Explanation: The only string that appears exactly once in each of the two arrays is "ab".
  */
+
 /**
  * @param {string[]} words1
  * @param {string[]} words2
  * @return {number}
  */
- var countWords = function(words1, words2) {
-    let map = new Map();
-    for (const word1 of words1) {
-        if (map.has (word1)) {
-            map.set (word1, map.get(word1) + 1);
-        } else {
-            map.set (word1, 1);
-        }
+var countWords = function (words1, words2) {
+  let map = new Map();
+  for (const word of words1) {
+    if (map.get(word)) {
+      map.set(word, map.get(word) + 1);
+    } else {
+      map.set(word, 1);
     }
-    for (const word2 of words2) {
-        if (map.has(word2) && map.get (word2) <= 1) {
-            map.set (word2, map.get (word2) - 1);
-        }
+  }
+  for (const word of words2) {
+    if (map.has(word) && map.get(word) <= 1) {
+      map.set(word, map.get(word) - 1);
     }
-    let counter = 0;
-    for (const [key, value] of map) {
-        if (map.get (key) == 0) {
-            counter++;
-        }
+  }
+  let counter = 0;
+  for (const [key, value] of map) {
+    if (value == 0) {
+      counter++;
     }
-    return counter;
+  }
+  return counter;
 };
