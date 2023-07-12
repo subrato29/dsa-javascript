@@ -33,22 +33,20 @@ Input: s = "ae", t = "aea"
 Output: "a"
  */
 
-var findTheDifference = function(s, t) {
-    let map = new Map();
-    for (let i = 0; i < s.length; i++) {
-        let ch = s.charAt(i);
-        if (map.has(ch)) {
-            map.set(ch, map.get(ch) + 1);
-        } else {
-            map.set(ch, 1);
-        }
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {character}
+ */
+var findTheDifference = function (s, t) {
+  const map = new Map();
+  for (const ch of s) {
+    map.set(ch, (map.get(ch) || 0) + 1);
+  }
+  for (const ch of t) {
+    if (!map.has(ch) || map.get(ch) == 0) {
+      return ch;
     }
-    for (let i = 0; i < t.length; i++) {
-        let ch = t.charAt(i);
-        if (!map.has(ch) || map.get(ch) == 0) {
-            return ch;
-        }
-        map.set(ch, map.get(ch) - 1);
-    }
-    return '0';
+    map.set(ch, (map.get(ch) || 0) - 1);
+  }
 };
