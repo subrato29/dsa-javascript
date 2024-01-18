@@ -33,9 +33,11 @@
 function findMin(nums: number[]): number {
   let left: number = 0;
   let right: number = nums.length - 1;
+  let res: number = nums[0];
 
   while (left < right) {
     const mid: number = Math.floor(left + (right - left) / 2);
+    res = Math.min(res, nums[mid]);
 
     // If the mid element is greater than the right most element,
     // it means the minimum element is on the right side.
@@ -48,5 +50,5 @@ function findMin(nums: number[]): number {
     }
   }
 
-  return nums[left];
+  return res;
 }
