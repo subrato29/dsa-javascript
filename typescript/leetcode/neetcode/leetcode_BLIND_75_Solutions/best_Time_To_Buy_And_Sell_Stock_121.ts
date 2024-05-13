@@ -36,3 +36,22 @@ function maxProfit(prices: number[]): number {
 
   return maxProfit;
 }
+
+//Another solution. This is easier to understand
+function maxProfit1(prices: number[]): number {
+  let maxProfit: number = 0;
+  let left: number = 0;
+  let right: number = 1;
+
+  while (right < prices.length) {
+    if (prices[left] < prices[right]) {
+      let profit: number = prices[right] - prices[left];
+      maxProfit = Math.max(maxProfit, profit);
+    } else {
+      left = right;
+    }
+    right++;
+  }
+
+  return maxProfit;
+}
