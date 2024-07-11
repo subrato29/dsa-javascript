@@ -35,18 +35,25 @@ function findMin(nums: number[]): number {
   let right: number = nums.length - 1;
   let res: number = nums[0];
 
-  while (left < right) {
-    const mid: number = Math.floor(left + (right - left) / 2);
+  while (left <= right) {
+    //If a sorted subarray found, then update result with most left element
+    if (nums[left] < nums[right]) {
+      res = Math.min(res, nums[left]);
+      break;
+    }
+
+    let mid: number = Math.floor(left + (right - left) / 2);
     res = Math.min(res, nums[mid]);
 
-    // If the mid element is greater than the right most element,
-    // it means the minimum element is on the right side.
-    if (nums[mid] > nums[right]) {
+    /**
+     * Input: nums = [3,4,5,1,2]
+     * if nums[mid] >= nums[left]: search right
+     * else search left
+     */
+    if (nums[mid] >= nums[left]) {
       left = mid + 1;
     } else {
-      // If the mid element is less than or equal to the right most element,
-      // it means the minimum element is on the left side, or it's the mid element.
-      right = mid;
+      right = mid - 1;
     }
   }
 
