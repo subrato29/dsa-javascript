@@ -32,22 +32,19 @@ Input: x = -101
 Output: false
  */
 
-var isPalindrome = function(x) {
-    if (x == 0) {
-        return true;
-    }
-    if (x < 0 || x % 10 == 0) {
-        return false;
-    }
-    const original = x;
-    let reverse = 0;
-    while (x > 0) {
-        let pop = x % 10;
-        x = parseInt(x / 10);
-        reverse = (reverse * 10) + pop;
-    }
-    if (original != reverse) {
-        return false;
-    }
-    return true;
+var isPalindrome = function (x) {
+  if (x < 0) {
+    return false;
+  }
+
+  const actual = x;
+  let reverse = 0;
+
+  while (x > 0) {
+    const temp = x % 10;
+    reverse = reverse * 10 + temp;
+    x = Math.floor(x / 10);
+  }
+
+  return actual === reverse;
 };
